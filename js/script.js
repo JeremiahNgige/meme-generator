@@ -22,31 +22,31 @@ inpFile.addEventListener('change', function(){
 });
 
 function imageDraw(){
-    previewContainer.width=img1.width;
-    previewContainer.height=img1.height;
+    previewContainer.width  =img1.width;
+    previewContainer.height =img1.height;
     
         img1.onload = function () {
-
-              
             //draw background image
+            ctx.clearRect(0,0,0,0);
             ctx.drawImage(img1, 0, 0,img1.width, img1.height,
                                 0, 0, previewContainer.width, previewContainer.height);
-            
         }
 }
 let generate = document.getElementById('generate');
 generate.addEventListener('click', showTxt );
  function showTxt(){
     
-    var topTxt = document.getElementById('topTxt').value;
+    let topTxt    = document.getElementById('topTxt').value;
+    let bottomTxt = document.getElementById('bottomTxt').value;
+    let fontSize  = document.getElementById('fontSize').value;
     alert(topTxt);
-    if ()
-    let fontsize= (img1.height%img1.width)/4;
+    alert(bottomTxt);
+
+    //let fontsize= (img1.height%img1.width)/4;
     //let text = topTxt.toUpperCase();
-    ctx.font = fontsize +"px Impact";
-    ctx.textAlign= "center";
-    ctx.fillStyle = "white";
+    ctx.font = fontSize +"px BlinkMacSystemFont";
+    ctx.fillStyle = "green";
     ctx.strokeStyle= "black ";
-    ctx.fillText(topTxt,img1.width*0.3,img1.height*0.5);
+    ctx.fillText(topTxt,previewContainer.width*0.2,previewContainer.height*0.3);
 }
 

@@ -21,13 +21,16 @@ inpFile.addEventListener('change', function(){
      }
 });
 function imageDraw(){
+    previewContainer.width=img1.width;
+    previewContainer.height=img1.height;
     
+
     if (previewContainer.getContext){
         img1.onload = function () {
                
-            ctx.clearRect(0,0 ,previewContainer.width, previewContainer.height);  
+              
             //draw background image
-            ctx.drawImage(img1, 0, 0, img1.width, img1.height,
+            ctx.drawImage(img1, 0, 0,img1.width, img1.height,
                                 0, 0, previewContainer.width, previewContainer.height);
             
         }
@@ -43,8 +46,8 @@ generate.addEventListener('click', showTxt );
     //let text = topTxt.toUpperCase();
     ctx.font = "20px Roboto";
     ctx.textAlign= "center";
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "black";
     ctx.strokeStyle= "black ";
-    ctx.fillText(topTxt,previewContainer.width*0.2,previewContainer.height*0.15);
+    ctx.fillText(topTxt,1,1);
 }
 

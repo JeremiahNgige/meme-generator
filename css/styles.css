@@ -10,11 +10,9 @@ body{
     height: 300px;
     margin-top: 20px;
     border: 2px solid black;
-    display: block;
     align-items: center;
-    justify-content: center;
-    color: black;
-    object-fit: cover;
+    color: white;
+    object-fit: fill;
 }
 .imgprevImg{
     display: none;

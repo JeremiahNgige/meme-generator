@@ -20,14 +20,14 @@ inpFile.addEventListener('change', function(){
          reader.readAsDataURL(file);
      }
 });
-function generateMeme(img, topText, bottomText){
-    this.img =img1;
+function imageDraw(){
+    
     if (previewContainer.getContext){
         img1.onload = function () {
                
             ctx.clearRect(0,0 ,previewContainer.width, previewContainer.height);  
             //draw background image
-            ctx.drawImage(img1, 0, 0, img.width, img.height,
+            ctx.drawImage(img1, 0, 0, img1.width, img1.height,
                                 0, 0, previewContainer.width, previewContainer.height);
             
         }
@@ -47,6 +47,4 @@ generate.addEventListener('click', showTxt );
     ctx.strokeStyle= "black ";
     ctx.fillText(topTxt,previewContainer.width*0.2,previewContainer.height*0.15);
 }
-let generateMeme = function (){
-    
-}
+

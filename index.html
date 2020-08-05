@@ -9,9 +9,70 @@
     <script src="js/jquery-3.5.1.js"></script>
 </head>
 <body>
-    <input type="file" name="inpFile" id="inpFile" accept="image/*" >
-    <canvas class="img-prev" id="imgPrev">
-    </canvas>
+    <div class="row">
+        <div class="col-lg-5 mar-left2">
+            <input type="file" name="inpFile" id="inpFile" accept="image/*" >
+            <canvas class="img-prev" id="imgPrev">
+               
+            </canvas>
+        </div>
+        <div class="col-lg-6">
+            <div class="row mar-top6 mar-left2">
+                <div class="col-md-5">
+                    <input type="text" name="Top" id="topTxt" placeholder="top text">
+                </div>
+                <div class="col-md-5">
+                    <button class="btn btn-info btn-md">add top</button>
+                </div>
+            </div>
+        <div class="row mar-top6 mar-left2">
+             <div class="col-md-5">
+                    <input type="text" name="Bottom" id="bottomTxt" placeholder="bottom text">
+             </div>
+             <div class="col-md-5">
+                <button class="btn btn-info btn-md">add bottom</button>
+             </div>
+        </div>
+        <div class="row mar-top6 mar-left2">
+            <div class="col-md-5">
+                   <input type="number" name="FontSize" id="bottomTxt" placeholder="FontSize">
+            </div>
+            <div class="col-md-5">
+               <button class="btn btn-info btn-md">Font size</button>
+            </div>
+       </div>
+       <div class="row mar-top6 mar-left2">
+        <div class="col-lg-7">
+            <div class="row">
+                <div class="col-sm-3">
+                    <button class="btn btn-sm btn-warning" id="yellowTxt">yellow</button>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-sm btn-danger" id="redTxt">Red </button>
+                </div>
+                <div class="col-sm-3">
+                    <button class="btn btn-sm btn-success" id="greenTxt">green</button>
+                </div> 
+            </div>
+        </div>
+                <div class="col-lg-7 mt-3">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <button class="btn btn-sm btn-info" id="blueTxt">blue</button>
+                        </div> 
+                        <div class="col-sm-3 ">
+                            <button class="btn btn-sm btn-dark" id="blackTxt">black</button>
+                        </div> 
+                        <div class="col-sm-3 ">
+                            <button class="btn btn-sm btn-light" id="whiteTxt">White</button>
+                        </div>     
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+
 
  <script src="js/script.js"></script>   
 </body>

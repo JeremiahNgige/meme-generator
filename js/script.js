@@ -15,13 +15,11 @@ inpFile.addEventListener('change', function(){
              console.log(this);
              
              img1.src= this.result;
-             img1.style.width = "50px"
-             img1.style.height= "50px"
+             
               
              img1.onload = function () {
                 //draw background image
                 ctx.drawImage(img1, 0, 0, img1.width, img1.height,0,0,previewContainer.width, previewContainer.height);
-                //draw a box over the top
             };
          });
          reader.readAsDataURL(file);

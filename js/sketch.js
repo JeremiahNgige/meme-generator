@@ -1,6 +1,7 @@
 let input
 let img
 
+
 function preload(){
   input = createFileInput(handleFile);
 }
@@ -29,4 +30,5 @@ function handleFile(file) {
   }
 
 }
+
 

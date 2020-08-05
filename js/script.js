@@ -41,7 +41,7 @@ generate.addEventListener('click', showTxt );
     alert(topTxt);
    
     //let text = topTxt.toUpperCase();
-    ctx.font = "30px Arial";
+    ctx.font = "20px Roboto";
     ctx.textAlign= "center";
     ctx.fillStyle = "white";
     ctx.strokeStyle= "black ";

@@ -27,3 +27,4 @@ licensed under the [MIT license](LICENSE).
 ## Contributors
 
 Ngige brian
+Njeri Phoebe

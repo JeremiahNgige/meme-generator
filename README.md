@@ -26,6 +26,6 @@ licensed under the [MIT license](LICENSE).
 
 ## Contributors
 
-Ngige brian
-Allan Tuikong
-Njeri Phoebe
+Ngige brian<br>
+Allan Tuikong<br>
+Njeri Phoebe<br>

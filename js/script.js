@@ -20,34 +20,33 @@ inpFile.addEventListener('change', function(){
          reader.readAsDataURL(file);
      }
 });
+
 function imageDraw(){
     previewContainer.width=img1.width;
     previewContainer.height=img1.height;
     
-
-    if (previewContainer.getContext){
         img1.onload = function () {
-               
+
               
             //draw background image
             ctx.drawImage(img1, 0, 0,img1.width, img1.height,
                                 0, 0, previewContainer.width, previewContainer.height);
             
         }
-    }
 }
 let generate = document.getElementById('generate');
 generate.addEventListener('click', showTxt );
  function showTxt(){
-    imageDraw();
+    
     var topTxt = document.getElementById('topTxt').value;
     alert(topTxt);
-   
+    if ()
+    let fontsize= (img1.height%img1.width)/4;
     //let text = topTxt.toUpperCase();
-    ctx.font = "20px Roboto";
+    ctx.font = fontsize +"px Impact";
     ctx.textAlign= "center";
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "white";
     ctx.strokeStyle= "black ";
-    ctx.fillText(topTxt,1,1);
+    ctx.fillText(topTxt,img1.width*0.3,img1.height*0.5);
 }
 

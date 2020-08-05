@@ -8,8 +8,8 @@ Meme Generator is a website where you can upload an image and turn it into a mem
 
 ## Technologies Used
 
-Html.<br> 
-css.<br> 
+Html.<br>
+css.<br>
 javascript.<br>
 
 ## Issues
@@ -27,3 +27,5 @@ licensed under the [MIT license](LICENSE).
 ## Contributors
 
 Ngige brian
+Allan Tuikong
+Njeri Phoebe

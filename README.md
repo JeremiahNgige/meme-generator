@@ -28,3 +28,4 @@ licensed under the [MIT license](LICENSE).
 
 Ngige brian
 Allan Tuikong
+Njeri Phoebe

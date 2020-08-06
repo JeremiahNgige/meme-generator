@@ -29,4 +29,4 @@ licensed under the [MIT license](LICENSE).
 Ngige brian<br>
 Allan Tuikong<br>
 Njeri Phoebe<br>
-Victor Mirgichan
+Victor F. Mirgichan

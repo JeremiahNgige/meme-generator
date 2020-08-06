@@ -39,12 +39,13 @@ generate.addEventListener('click', showTxt );
     let topTxt    = document.getElementById('topTxt').value;
     let bottomTxt = document.getElementById('bottomTxt').value;
     let fontSize  = document.getElementById('fontSize').value;
+    let txtSize   = ((img1.height%img1.width)/fontSize)*2;
     alert(topTxt);
     alert(bottomTxt);
 
     //let fontsize= (img1.height%img1.width)/4;
     //let text = topTxt.toUpperCase();
-    ctx.font = fontSize +"px BlinkMacSystemFont";
+    ctx.font = txtSize +"px BlinkMacSystemFont";
     ctx.fillStyle = "green";
     ctx.strokeStyle= "black ";
     ctx.fillText(topTxt,previewContainer.width*0.2,previewContainer.height*0.3);

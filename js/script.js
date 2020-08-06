@@ -1,12 +1,56 @@
-function fileSelect(event) {
-    let file = event.target.files[0];
+function textChangeListener (evt){
+    var id = evt.target.id;
+    var text = evt.target.value;
 
-    let reader = new FileReader();
+    if (id == "topLineText"){
+        window.topLineText = text;
+    }
+    else {
+        window.bottomLineText = text;
+    }
+    redrawMeme(window.imageSrc, window.topLineText, window.bottomLineText);
+
+}
+
+
+function redrawMeme(image,topLine,bottomLine) {
+    var canvas = document.querySelector('canvas');
+    var context = canvas.getContext("2d");
+    if (image!=null){
+        context.clearRect(0,0,canvas.width,canvas.height)
+        context.drawImage(image,0,0,canvas.width,canvas.height);
+    }
+
+    //context.font = fontWeight + " " + fontStyle + " " + fontSize + "px " + fontFace;
+    context.font = fontSize + "pt Sans-serif";
+    context.textAlign = "center";
+    context.fillStyle = "white";
+    context.strokeStyle = "black";
+    context.lineWidth = "3";
+
+    if (topLine!=null){
+        context.fillText(topLine,canvas.width/2,50);
+        context.strokeText(topLine,canvas.width/2,50);
+    }
+
+    if (bottomLine!=null){
+        context.fillText(bottomLine,canvas.width/2,canvas.height-20);
+        context.strokeText(bottomLine,canvas.width/2,canvas.height-20);
+    }
+
+}
+
+function handleFileSelect(evt) {
+    var canvasWidth = 500;
+    var canvasHeight = 500;
+    var file = evt.target.files[0];
+
+    var reader = new FileReader();
     reader.onload = function(fileObject) {
-        let data = fileObject.target.result;
+        var data = fileObject.target.result;
 
         // Create an image object
-        let image = new Image();
+        var image = new Image();
         image.onload = function() {
 
             window.imageSrc = this;
@@ -19,54 +63,15 @@ function fileSelect(event) {
     };
     reader.readAsDataURL(file)
 }
-
 window.topLineText = "";
 window.bottomLineText ="";
-let input1 = document.getElementById('topLineText');
-let input2 = document .getElementById('bottomLineText');
+var input1 = document.getElementById('topLineText');
+var input2 = document .getElementById('bottomLineText');
 input1.oninput = textChangeListener;
 input2.oninput = textChangeListener;
-document.getElementById('file').addEventListener('change',fileSelect, false);
-
-function textChangeListener (event){
-    let id = event.target.id;
-    let text = event.target.value;
-
-    if (id == "topLineText"){
-        window.topLineText = text;
-    }
-    else {
-        window.bottomLineText = text;
-    }
-    redrawMeme(window.imageSrc, window.topLineText, window.bottomLineText);
-
-}
-
-function redrawMeme(image,topLine,bottomLine) {
-    let canvas = document.querySelector('canvas');
-    let context = canvas.getContext("2d");
-    if (image!=null){
-        context.clearRect(0,0,canvas.width,canvas.height)
-        context.drawImage(image,0,0,canvas.width,canvas.height);
-    }
-
-    context.font = "36pt Sans-serif";
-    context.textAlign = "center";
-    context.fillStyle = "white";
-    context.strokeStyle = "black";
-    context.lineWidth = "3";
+document.getElementById('file').addEventListener('change',handleFileSelect, false);
+document.getElementById('saveBtn').addEventListener('click',saveFile,false);
 
 
-    if (topLine!=null){
-        context.fillText(topLine,canvas.width/2,50);
-        context.strokeText(topLine,canvas.width/2,50);
-    }
 
-    if (bottomLine!=null){
-        context.fillText(bottomLine,canvas.width/2,canvas.height-20);
-        context.strokeText(bottomLine,canvas.width/2,canvas.height-20);
-    }
-
-
-}
 

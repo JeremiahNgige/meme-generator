@@ -20,12 +20,48 @@
         
             <h5> Bottom line text</h4> 
             <input id="bottomLineText" type="text"><br/><br>
-       
+
+            <form id="style">
+                <h5>Font Style</h5> 
+                <select id="fontStyle">
+                    <option value="normal">normal</option>
+                    <option value="italic">italic</option>
+                    <option value="oblique">oblique</option>
+                </select> <br> <br>
+    
+                <h5>Font Type</h5> 
+                <select id="textFont">
+                    <option value="serif">serif</option>
+                    <option value="sans-serif">sans-serif</option>
+                    <option value="cursive">cursive</option>
+                    <option value="fantasy">fantasy</option>
+                    <option value="monospace">monospace</option>
+                </select> <br><br>
+    
+                <h5>Font Weight</h5>
+                <select id="fontWeight">
+                    <option value="normal">normal</option>
+                    <option value="bold">bold</option>
+                    <option value="bolder">bolder</option>
+                    <option value="lighter">lighter</option>
+                   </select> <br><br>
+    
+                <h5>Font Size</h5>
+                <input type="range" id="textSize"
+                    min="0"
+                    max="200"
+                    step="1"
+                    value="50"  
+                />
+            </form>
+            
+
+
             <button id="saveBtn">Save</button>
         <div> 
     <div>
 
 
- <script src="js/script.js"></script>   
+ <script src="./js/script.js"></script>   
 </body>
 </html>

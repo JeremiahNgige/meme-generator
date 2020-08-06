@@ -10,7 +10,7 @@ function fileSelect(event) {
         image.onload = function() {
 
             window.imageSrc = this;
-            redrawMeme(window.imageSrc, null, null,null);
+            redrawMeme(window.imageSrc, null, null,null,null);
         }
 
         // Set image data to background image.
@@ -19,21 +19,28 @@ function fileSelect(event) {
     };
     reader.readAsDataURL(file)
 }
-
+window.fontColor= "";
 window.topLineText = "";
 window.bottomLineText ="";
 window.fontSize;
-let input1 = document.getElementById('topLineText');
-let input2 = document .getElementById('bottomLineText');
-input1.oninput = textChangeListener;
-input2.oninput = textChangeListener;
-document.getElementById('file').addEventListener('change',fileSelect, false);
-let inputSize = document.getElementById('fontSize');
+
+let input1        = document.getElementById('topLineText');
+let input2        = document.getElementById('bottomLineText');
+let inputSize     = document.getElementById('fontSize');
+let inputColor    = document.getElementById('fontColor');
+let buttonSave    = document.getElementById('saveBtn');
+
+input1.oninput    = textChangeListener;
+input2.oninput    = textChangeListener;
 inputSize.oninput = textChangeListener;
+inputColor.onchange= textChangeListener;
+
+document.getElementById('file').addEventListener('change',fileSelect, false);
 
 function textChangeListener (event){
     let id = event.target.id;
     let text = event.target.value;
+    let indexnu = event.target.selectedIndex;
 
     if (id == "topLineText"){
         window.topLineText = text;   
@@ -43,14 +50,42 @@ function textChangeListener (event){
     }
     else if(id == "fontSize"){
         window.fontSize = text;
-    }else{
-          window.fontSize=50;
-    }
-    redrawMeme(window.imageSrc, window.topLineText, window.bottomLineText,window.fontSize);
+    } 
+    else {
+        switch(indexnu){
+            case 0:
+                window.fontColor = text;
+            break;
+            case 1:
+                window.fontColor = text;
+            break;
+            case 2:
+                window.fontColor =text;
+            break;
+            case 3:
+                window.fontColor =text;
+            break;
+            case 4:
+                window.fontColor =text;
+            break;
+            case 5:
+                window.fontColor =text;    
+            break ;
+            case 6:
+                window.fontColor =text;
+            break;
+            default:
+                window.fontColor ="white";
+        }
+                           
+          }
+    
+
+    redrawMeme(window.imageSrc, window.topLineText, window.bottomLineText,window.fontColor,window.fontSize);
 
 }
 
-function redrawMeme(image,topLine,bottomLine,fontSize) {
+function redrawMeme(image,topLine,bottomLine,fontColor,fontSize) {
     let canvas = document.querySelector('canvas');
     let ctx = canvas.getContext("2d");
     if (image!=null){
@@ -71,15 +106,17 @@ function redrawMeme(image,topLine,bottomLine,fontSize) {
     }
 
     
-    ctx.font =  fontSize +"px Sans-serif";
+    ctx.font =  fontSize +"pt Sans-serif";
     ctx.textAlign = "center";
-    ctx.fillStyle = "white";
+    ctx.fillStyle = fontColor;
     ctx.strokeStyle = "black";
-    ctx.lineWidth = "3";
+    ctx.lineWidth = "2";
 
 }
-function fontChangeSize(event){
-    
-    
-}
 
+buttonSave.onclick = function saveFile() {
+    window.open(document.querySelector('canvas').toDataURL().replace("image/png", "image/octet-stream"));
+    
+ }
+ //var image = document.querySelector('canvas').toDataURL("image/png").replace("image/png", "image/octet-stream");  
+     //window.location.href=image;

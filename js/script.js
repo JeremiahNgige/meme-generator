@@ -1,53 +1,85 @@
-const inpFile      = document.getElementById("inpFile");
-var previewContainer = document.getElementById("imgPrev");
-var img1           = new Image();
-let topButton      = document.getElementById("btnTop");
-let bottomButton   = document.getElementById("btnBottom");
-var ctx = previewContainer.getContext('2d');
+function fileSelect(event) {
+    let file = event.target.files[0];
 
-inpFile.addEventListener('change', function(){
-     const file = this.files[0];
-     console.log(file)
-     if(file){
-         const reader =new FileReader();
+    let reader = new FileReader();
+    reader.onload = function(fileObject) {
+        let data = fileObject.target.result;
 
-         reader.addEventListener('load', function(){
-             console.log(this);
-             
-             img1.src= this.result;
-             imageDraw();
-         });
-         reader.readAsDataURL(file);
-     }
-});
+        // Create an image object
+        let image = new Image();
+        image.onload = function() {
 
-function imageDraw(){
-    previewContainer.width  =img1.width;
-    previewContainer.height =img1.height;
-    
-        img1.onload = function () {
-            //draw background image
-            ctx.clearRect(0,0,0,0);
-            ctx.drawImage(img1, 0, 0,img1.width, img1.height,
-                                0, 0, previewContainer.width, previewContainer.height);
+            window.imageSrc = this;
+            redrawMeme(window.imageSrc, null, null,null);
         }
-}
-let generate = document.getElementById('generate');
-generate.addEventListener('click', showTxt );
- function showTxt(){
-    
-    let topTxt    = document.getElementById('topTxt').value;
-    let bottomTxt = document.getElementById('bottomTxt').value;
-    let fontSize  = document.getElementById('fontSize').value;
-    let txtSize   = ((img1.height%img1.width)/fontSize)*2;
-    alert(topTxt);
-    alert(bottomTxt);
 
-    //let fontsize= (img1.height%img1.width)/4;
-    //let text = topTxt.toUpperCase();
-    ctx.font = txtSize +"px BlinkMacSystemFont";
-    ctx.fillStyle = "green";
-    ctx.strokeStyle= "black ";
-    ctx.fillText(topTxt,previewContainer.width*0.2,previewContainer.height*0.3);
+        // Set image data to background image.
+        image.src = data;
+        console.log(data);
+    };
+    reader.readAsDataURL(file)
+}
+
+window.topLineText = "";
+window.bottomLineText ="";
+window.fontSize;
+let input1 = document.getElementById('topLineText');
+let input2 = document .getElementById('bottomLineText');
+input1.oninput = textChangeListener;
+input2.oninput = textChangeListener;
+document.getElementById('file').addEventListener('change',fileSelect, false);
+let inputSize = document.getElementById('fontSize');
+inputSize.oninput = textChangeListener;
+
+function textChangeListener (event){
+    let id = event.target.id;
+    let text = event.target.value;
+
+    if (id == "topLineText"){
+        window.topLineText = text;   
+    }
+    else if(id == "bottomLineText"){
+        window.bottomLineText = text;
+    }
+    else if(id == "fontSize"){
+        window.fontSize = text;
+    }else{
+          window.fontSize=50;
+    }
+    redrawMeme(window.imageSrc, window.topLineText, window.bottomLineText,window.fontSize);
+
+}
+
+function redrawMeme(image,topLine,bottomLine,fontSize) {
+    let canvas = document.querySelector('canvas');
+    let ctx = canvas.getContext("2d");
+    if (image!=null){
+        ctx.clearRect(0,0,canvas.width,canvas.height)
+        ctx.drawImage(image,0,0,canvas.width,canvas.height);
+    }
+
+
+
+    if (topLine!=null){
+        ctx.fillText(topLine,canvas.width/2,50);
+        ctx.strokeText(topLine,canvas.width/2,50);
+    }
+
+    if (bottomLine!=null){
+        ctx.fillText(bottomLine,canvas.width/2,canvas.height-20);
+        ctx.strokeText(bottomLine,canvas.width/2,canvas.height-20);
+    }
+
+    
+    ctx.font =  fontSize +"px Sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "white";
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = "3";
+
+}
+function fontChangeSize(event){
+    
+    
 }
 

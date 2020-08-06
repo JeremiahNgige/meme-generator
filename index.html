@@ -4,70 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
+    <link rel="stylesheet" href="css/bootstrap-select.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-3.5.1.js"></script>
 </head>
 <body>
     <div class="row">
-        <div class="col-lg-5 mar-left2">
-            <input type="file" name="inpFile" id="inpFile" accept="image/*" >
-            <canvas class="img-prev" id="imgPrev">
-               
-            </canvas>
-        </div>
-        <div class="col-lg-6">
-            <div class="row mar-top6 mar-left2">
-                <div class="col-md-5">
-                    <input type="text" id="topTxt" placeholder="top text">
-                </div>
-            </div>
-        <div class="row mar-top6 mar-left2">
-             <div class="col-md-5">
-                    <input type="text" name="Bottom" id="bottomTxt" placeholder="bottom text">
-             </div>
-        </div>
-        <div class="row mar-top6 mar-left2">
-            <div class="col-md-5">
-                   <input type="number" name="FontSize" id="fontSize" placeholder="FontSize">
-            </div>  
-       </div>
-       <div class="row mar-top6 mar-left2">
-        <div class="col-lg-7">
-            <div class="row">
-                <div class="col-sm-3">
-                    <button class="btn btn-sm btn-warning" id="yellowTxt">yellow</button>
-                </div>
-                <div class="col-sm-3">
-                    <button class="btn btn-sm btn-danger" id="redTxt">Red </button>
-                </div>
-                <div class="col-sm-3">
-                    <button class="btn btn-sm btn-success" id="greenTxt">green</button>
-                </div> 
-            </div>
-          </div>
-        <div class="col-lg-7 mt-3">
-                 <div class="row">
-                     <div class="col-sm-3">
-                            <button class="btn btn-sm btn-info" id="blueTxt">blue</button>
-                        </div> 
-                        <div class="col-sm-3 ">
-                            <button class="btn btn-sm btn-dark" id="blackTxt">black</button>
-                        </div> 
-                        <div class="col-sm-3 ">
-                            <button class="btn btn-sm btn-light" id="whiteTxt">White</button>
-                        </div>     
-                  </div>
-              </div>
-            </div>
+        <div class="col-md-5">
+            <input type="file" id="file" accept="images/*"/>
+            <canvas width="400px" height="400px" class="image-container"></canvas>
         </div>
         <div class="col-md-5">
-            <button class="btn btn-info btn-md" id="generate">Generate</button>
-         </div>
+            <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="input Top">Top text</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input id="topLineText" type="text" placeholder="enter top text">
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="inputBottom">Bottom text</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input id="bottomLineText" type="text" placeholder=" enter bottom text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="inputBottom">font-size</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="range" id="fontSize"
+                                min="30"
+                                max="100"
+                                step="1"
+                                value="50"/>
+                        </div>
+                    </div>
+            </div>          
+                <button class="btn btn-md btn-success mt-3" id="saveBtn">Generate</button>
+        </div>
+        
     </div>
-    
-
-
+         
  <script src="js/script.js"></script>   
 </body>
 </html>

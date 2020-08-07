@@ -26,10 +26,15 @@ How to use this web app:<br>
 | :------------- | :----------: | -----------:          |
 |  User presses upload button  |   Redirects the user to their Local folder storage for  imageselection.|   The selected Image appears on the Container labeled Image preview
  |
-| User Inputs text on the input labeled Top text and presses add top  | The top text functionality loads behind the scenes. |  The text appears on the top part of the image   ||
-|  User Inputs text on the input labeled Bottom text and presses add bottom  |  The top text functionality loads behind the scenes.  | The text appears on the top part of the image   ||
-|  User Inputs a number below 40 and presses size text |   The font size functionality loads behind the scenes     | The font is is displayed in the inputted size     ||
-|  User presses a color corresponding to the desired color |   The font Color change functionality loads behind the scenes    | The text is displayed in the selected color    ||
+| User Inputs text on the input labeled Top text and presses add top  | The top text functionality loads behind the scenes. |  The text appears on the top part of the image
+  |
+|  User Inputs text on the input labeled Bottom text and presses add bottom  |  The top text functionality loads behind the scenes.  | The text appears on the top part of the image
+  |
+|  User Inputs a number below 40 and presses size text |   The font size functionality loads behind the scenes     | The font is is displayed in the inputted size
+ |
+|  User presses a color corresponding to the desired color |   The font Color change functionality loads behind the scenes    | The text is displayed in the selected color 
+ ||
+|
 
 
 ## Issues

@@ -4,15 +4,25 @@
   
 ## Description
 
-Meme Generator is a website where you can upload an image and turn it into a meme by adding text on top of it.
+Meme Generator is a website where you can upload an image and turn it into a meme by adding text on top of it.<br>
+How to use this web app:<br>
 
-
+1). **landing page**<br>
+    After loading the Page you land on a page looking like this<br>
+    ![landing page](https://raw.githubusercontent.com/JeremiahNgige/meme-generator/master/imgs/onload.png) <br>
+2). **Input the respective top and bottom text**<br>
+    input your text on the respectively labeled top and bottom inputs,then choose a color and then finally size the image .<br>
+    ![input text and style it](https://raw.githubusercontent.com/JeremiahNgige/meme-generator/master/imgs/inputted.png) <br>
+3). **Download Meme** <br>
+   Press the download meme button to download your final image<br>
+   ![Download Meme](https://raw.githubusercontent.com/JeremiahNgige/meme-generator/master/imgs/downloaded.png) <br>
 
 ## Technologies Used
 
 Html.<br>
 css.<br>
 javascript.<br>
+Jquery
 
 ## Issues
 
@@ -20,7 +30,10 @@ None for now
 
 ## Support and contact details
 
-Contact :**brianjeremy123789@gmail.com**
+Contact :**brianjeremy123789@gmail.com** <br>
+         **allantuix@gmail.com** <br>
+         **Phoebegichuhi4@gmail.com** <br>
+         **provic13@gmail.com**<br>
 
 ### License
 

@@ -18,7 +18,9 @@ How to use this web app:<br>
    ![Download Meme](https://raw.githubusercontent.com/JeremiahNgige/meme-generator/master/imgs/downloaded.png) <br>
 
 ## Technologies Used
-
+  html<br>
+  css<br>
+  javascript.
 
 
 # BDD
